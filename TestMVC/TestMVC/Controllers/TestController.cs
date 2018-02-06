@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TestMVC.Models;
+using TestMVC.TestMVC.BLL;
 using TestMVC.ViewModels;
 
 namespace TestMVC.Controllers
@@ -23,34 +24,6 @@ namespace TestMVC.Controllers
             //这里会调用重写的ToString
             return cu;
         }
-
-        // 测试 ViewData 和 ViewBag
-        //public ActionResult GetView()
-        //{
-        //    Employee emp = new Employee();
-        //    emp.FirstName = "Sukesh";
-        //    emp.LastName = "Marla";
-        //    emp.Salary = 20000;
-        //    //ViewData["Employee"] = emp;
-        //    ViewBag.Employee = emp;
-        //    return View("MyView");
-        //}
-
-        // 测试 ViewModel 强类型视图  对应的是（实现ViewModel）
-        //public ActionResult GetView()
-        //{
-        //    Employee emp = new Employee() { FirstName = "Sukesh", LastName = "Marla", Salary = 20000 };
-
-        //    EmployeeViewModel vmEmp = new EmployeeViewModel() { EmployeeName = emp.FirstName + " " + emp.LastName, Salary = emp.Salary.ToString("C") };
-        //    if (emp.Salary > 15000)
-        //        vmEmp.SalaryColor = "yellow";
-        //    else
-        //        vmEmp.SalaryColor = "green";
-
-        //    vmEmp.UserName = "Admin";
-
-        //    return View("MyView",vmEmp);
-        //}
 
         public ActionResult GetView()
         {
@@ -87,33 +60,6 @@ namespace TestMVC.Controllers
         public override string ToString()
         {
             return this.CustomerName + "|" + this.Address;
-        }
-    }
-
-    public class EmployeeBusinessLayer
-    {
-        public List<Employee> GetEmployees()
-        {
-            List<Employee> employees = new List<Employee>();
-            Employee emp = new Employee();
-            emp.FirstName = "johnson";
-            emp.LastName = " fernandes";
-            emp.Salary = 14000;
-            employees.Add(emp);
-
-            emp = new Employee();
-            emp.FirstName = "michael";
-            emp.LastName = "jackson";
-            emp.Salary = 16000;
-            employees.Add(emp);
-
-            emp = new Employee();
-            emp.FirstName = "robert";
-            emp.LastName = " pattinson";
-            emp.Salary = 20000;
-            employees.Add(emp);
-
-            return employees;
         }
     }
 }
