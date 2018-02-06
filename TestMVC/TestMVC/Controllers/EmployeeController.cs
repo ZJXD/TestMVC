@@ -9,7 +9,7 @@ using TestMVC.ViewModels;
 
 namespace TestMVC.Controllers
 {
-    public class TestController : Controller
+    public class EmployeeController : Controller
     {
         // GET: Test
         public string GetString()
@@ -25,7 +25,7 @@ namespace TestMVC.Controllers
             return cu;
         }
 
-        public ActionResult GetView()
+        public ActionResult Index()
         {
             EmployeeBusinessLayer blEmp = new EmployeeBusinessLayer();
             List<Employee> emps = blEmp.GetEmployees();
@@ -45,9 +45,37 @@ namespace TestMVC.Controllers
 
             EmployeeListViewModel lvmEmp = new EmployeeListViewModel();
             lvmEmp.Employees = vmEmp;
-            lvmEmp.UserName = "Admin";
 
-            return View("MyView", lvmEmp);
+            return View("Index", lvmEmp);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult AddNew()
+        {
+            return View("CreateEmployee");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        public ActionResult SaveEmployee(Employee e, string BtnSubmit)
+        {
+            switch (BtnSubmit)
+            {
+                case "Save Employee":
+                    return Content(e.FirstName + "|" + e.LastName + "|" + e.Salary);
+                case "Cancel":
+                    return RedirectToAction("Index");
+                default:
+                    break;
+            }
+
+            return new EmptyResult();
         }
     }
 

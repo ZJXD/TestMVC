@@ -12,7 +12,7 @@ namespace TestMVC.TestMVC.BLL
         public List<Employee> GetEmployees()
         {
             SalesERPDAL salesDal = new SalesERPDAL();
-            salesDal.Database.CreateIfNotExists();
+            //salesDal.Database.CreateIfNotExists();
 
             return salesDal.Employees.ToList();
         }
