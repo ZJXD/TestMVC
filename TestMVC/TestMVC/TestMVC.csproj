@@ -142,6 +142,10 @@
     <Compile Include="Migrations\201802060728019_record1.Designer.cs">
       <DependentUpon>201802060728019_record1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802070906164_record2.cs" />
+    <Compile Include="Migrations\201802070906164_record2.Designer.cs">
+      <DependentUpon>201802070906164_record2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TestMVC.BLL\EmployeeBusinessLayer.cs" />
     <Compile Include="TestMVC.DAL\SalesERPDAL.cs" />
@@ -206,6 +210,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802060728019_record1.resx">
       <DependentUpon>201802060728019_record1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802070906164_record2.resx">
+      <DependentUpon>201802070906164_record2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

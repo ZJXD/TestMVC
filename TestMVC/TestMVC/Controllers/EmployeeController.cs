@@ -72,9 +72,14 @@ namespace TestMVC.Controllers
             switch (BtnSubmit)
             {
                 case "Save Employee":
-                    EmployeeBusinessLayer eb = new EmployeeBusinessLayer();
-                    eb.SaveEmployee(e);
-                    return RedirectToAction("Index");
+                    if (ModelState.IsValid)
+                    {
+                        EmployeeBusinessLayer eb = new EmployeeBusinessLayer();
+                        eb.SaveEmployee(e);
+                        return RedirectToAction("Index");
+                    }
+                    else
+                        return View("CreateEmployee");
                 case "Cancel":
                     return RedirectToAction("Index");
                 default:

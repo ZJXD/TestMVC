@@ -100,3 +100,4 @@ D:\GitHub\TestMVC\TestMVC\TestMVC\bin\MySql.Data.Entity.EF6.dll
 D:\GitHub\TestMVC\TestMVC\TestMVC\obj\Debug\TestMVC.Migrations.record1.resources
 D:\GitHub\TestMVC\TestMVC\TestMVC\obj\Debug\TestMVC.csproj.GenerateResource.Cache
 D:\GitHub\TestMVC\TestMVC\TestMVC\obj\Debug\TestMVC.csprojResolveAssemblyReference.cache
+D:\GitHub\TestMVC\TestMVC\TestMVC\obj\Debug\TestMVC.Migrations.record2.resources
