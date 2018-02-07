@@ -25,6 +25,10 @@ namespace TestMVC.Controllers
             return cu;
         }
 
+        /// <summary>
+        /// 列表栏
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             EmployeeBusinessLayer blEmp = new EmployeeBusinessLayer();
@@ -50,7 +54,7 @@ namespace TestMVC.Controllers
         }
 
         /// <summary>
-        /// 
+        /// 新建数据页面
         /// </summary>
         /// <returns></returns>
         public ActionResult AddNew()
@@ -59,7 +63,7 @@ namespace TestMVC.Controllers
         }
 
         /// <summary>
-        /// 
+        /// 保存数据
         /// </summary>
         /// <param name="e"></param>
         /// <returns></returns>
@@ -68,7 +72,9 @@ namespace TestMVC.Controllers
             switch (BtnSubmit)
             {
                 case "Save Employee":
-                    return Content(e.FirstName + "|" + e.LastName + "|" + e.Salary);
+                    EmployeeBusinessLayer eb = new EmployeeBusinessLayer();
+                    eb.SaveEmployee(e);
+                    return RedirectToAction("Index");
                 case "Cancel":
                     return RedirectToAction("Index");
                 default:
